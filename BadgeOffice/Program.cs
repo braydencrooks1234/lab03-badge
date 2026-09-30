@@ -1,4 +1,8 @@
-﻿// Collect The Data
+﻿//Declare random variable
+
+Random rng = new Random();
+
+// Collect The Data
 Console.Write("What is your first and last name? ");
 string fullName = Console.ReadLine();
 
@@ -19,7 +23,15 @@ fullName = fullName.ToUpper();
 
 //print out info
 
+Console.WriteLine("");
 Console.WriteLine("Name on badge: " + fullName);
 Console.WriteLine("Username: " + username);
 Console.WriteLine($"Initials: {firstInitial}.{lastInitial}.");
 Console.WriteLine("Letters in last name: " + nameLength);
+Console.WriteLine("");
+
+//Create locker info
+
+Console.WriteLine("Student ID: " + rng.Next(100000, 1000000));
+Console.WriteLine("Locker: " + rng.Next(1, 501));
+
