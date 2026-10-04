@@ -34,4 +34,38 @@ Console.WriteLine("");
 
 Console.WriteLine("Student ID: " + rng.Next(100000, 1000000));
 Console.WriteLine("Locker: " + rng.Next(1, 501));
+Console.WriteLine("");
 
+//Collect data for distance
+
+Console.Write("Dorm x: ");
+int dormX = Convert.ToInt32(Console.ReadLine());
+
+Console.Write("Dorm y: ");
+int dormY = Convert.ToInt32(Console.ReadLine());
+
+Console.Write("Classroom x: ");
+int classroomX = Convert.ToInt32(Console.ReadLine());
+
+Console.Write("Classroom y: ");
+int classroomY = Convert.ToInt32(Console.ReadLine());
+
+Console.Write("What is your walking speed in feet per second? ");
+double feetPerSecond = Convert.ToDouble(Console.ReadLine());
+
+//Calculate distance and time
+
+//distance = √( (x₂ − x₁)² + (y₂ − y₁)² )
+
+double mathX = Math.Pow(classroomX - dormX, 2);
+double mathY = Math.Pow(classroomY - dormY, 2);
+double distance = Math.Sqrt(mathX + mathY);
+
+int tripTime = Convert.ToInt32(distance / feetPerSecond);
+int minutes = Convert.ToInt32(tripTime / 60);
+int seconds = Convert.ToInt32(tripTime % 60);
+
+//Print info
+
+Console.WriteLine("Distance: " + Math.Round(distance, 1));
+Console.WriteLine($"Walk time: {minutes} minutes {seconds} seconds");
