@@ -32,8 +32,10 @@ Console.WriteLine("");
 
 //Create locker info
 
-Console.WriteLine("Student ID: " + rng.Next(100000, 1000000));
-Console.WriteLine("Locker: " + rng.Next(1, 501));
+int studentID = rng.Next(100000, 1000000);
+Console.WriteLine("Student ID: " + studentID);
+int lockerID = rng.Next(1, 501);
+Console.WriteLine("Locker: " + lockerID);
 Console.WriteLine("");
 
 //Collect data for distance
@@ -69,3 +71,19 @@ int seconds = Convert.ToInt32(tripTime % 60);
 
 Console.WriteLine("Distance: " + Math.Round(distance, 1));
 Console.WriteLine($"Walk time: {minutes} minutes {seconds} seconds");
+
+//Part 4: The finished badge
+
+int badgeID = (int)studentID % 9;
+
+Console.WriteLine(new string('=', 34));
+Console.WriteLine("ETSU STUDENT BADGE".PadLeft(26));
+Console.WriteLine(new string('=', 34));
+
+Console.WriteLine("NAME".PadRight(10) + fullName);
+Console.WriteLine("USERNAME".PadRight(10) + username);
+Console.WriteLine("ID".PadRight(10) + studentID);
+Console.WriteLine("LOCKER".PadRight(10) + lockerID);
+Console.WriteLine("WALK".PadRight(10) + minutes + "min" + seconds + "sec");
+
+Console.WriteLine(new string('=', 34));
